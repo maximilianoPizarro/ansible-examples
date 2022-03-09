@@ -1,0 +1,8 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: docker info
+    command: |
+      #minikube start --driver=podman --container-runtime=cri-o
+      docker run --rm -e RUNNER_PLAYBOOK=test.yml -v $PWD/demo:/runner quay.io/ansible/ansible-runner:latest
