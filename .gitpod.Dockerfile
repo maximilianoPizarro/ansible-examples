@@ -1,4 +1,5 @@
-FROM ubuntu:20.04
+FROM gitpod/workspace-full
+
 
 USER root
 
@@ -8,8 +9,6 @@ ENV VERSION=1.19
 ### Gitpod user ###
 # '-l': see https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#user
 RUN useradd -l -u 33333 -G sudo -md /home/gitpod -s /bin/bash -p gitpod gitpod
-
-RUN sudo apt-get -y curl
 
 ENV HOME=/home/gitpod
 WORKDIR $HOME
